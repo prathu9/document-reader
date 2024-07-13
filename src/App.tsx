@@ -26,11 +26,11 @@ const handleChangePart = (event: ChangeEvent<HTMLSelectElement>) => {
 
   return (
     <>
-      <div className='flex gap-5'>
+      <div className='flex gap-5 flex-wrap lg:flex-nowrap'>
         <div className='p-6'>
-          <Selector parts={parts} handleChangePart={handleChangePart}/>
+          <Selector parts={parts} selectedPartIndex={selectedPartIndex} handleChangePart={handleChangePart}/>
         </div>
-        <div className='px-10 py-6'>
+        <div className='px-0 py-6 md:px-10'>
           <PartDisplay parts={parts} currentPartIndex={selectedPartIndex} setSelectedPartIndex={setSelectedPartIndex} />
         </div>
       </div>

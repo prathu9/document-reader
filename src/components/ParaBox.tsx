@@ -14,7 +14,7 @@ const ParaBox = ({ paras, currentWordIndex }: { paras: string,  currentWordIndex
         else{
             isActive = false;
         }
-console.log(startIndex, endIndex, currentWordIndex, isActive)
+// console.log(startIndex, endIndex, currentWordIndex, isActive)
         return (
           <>
             {words.map((word, i) => (

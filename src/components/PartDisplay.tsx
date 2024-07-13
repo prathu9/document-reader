@@ -39,7 +39,7 @@ const PartDisplay = ({
     const speakPart = (partIndex: number) => {
       const utterance = new SpeechSynthesisUtterance(parts[partIndex]);
       setCurrentWordIndex(0);
-      utterance.rate = 1;
+    // utterance.rate = 100;
 
       utterance.onboundary = (event) => {
         if (event.name === "word") {
@@ -48,11 +48,11 @@ const PartDisplay = ({
       };
 
       utterance.onend = () => {
-        if (currentPartIndex === parts.length) {
+        if (partIndex === parts.length -1) {
           setIsSpeaking(false);
         } else {
-          setSelectedPartIndex(currentPartIndex + 1);
-          speakPart(currentPartIndex + 1);
+          setSelectedPartIndex(partIndex + 1);
+          speakPart(partIndex + 1);
         }
       };
 

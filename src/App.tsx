@@ -9,7 +9,8 @@ function App() {
   const [selectedPartIndex, setSelectedPartIndex] = useState(0);
 
   useEffect(() => {
-    fetch("/document/text.txt")
+    const url = import.meta.env.MODE === "development"?"/document/text.txt":"https://raw.githubusercontent.com/prathu9/document-reader/gh-pages/document/text.txt";
+    fetch(url)
     .then((res) => res.text())
     .then((data) => setParts(documentToParts(data, 1500)))
     .catch((err) => console.log(err));
